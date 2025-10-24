@@ -28,3 +28,33 @@ values ('Maria Brandao', 'F', 'Jabaquara', 1200.00, 'Marketing'),
 ('Ralf Borges', 'F', 'Jabaquara', 1600.00, 'Marketing');
 
 select *from funcionario;
+
+select sum(salariofunc) as total_salario
+from funcionario;
+
+select count(*)  as quant_funmar
+from funcionario
+where setorfunc = 'Marketing';
+
+select setorfunc, avg(salariofunc) as media_salario
+from funcionario
+group by setorfunc
+order by media_salario desc;
+
+
+SELECT COUNT(*) AS quantidade_funcionarios
+FROM funcionario
+WHERE salariofunc < 3000
+  AND bairrofunc = 'Socorro';
+  
+SELECT setorfunc, count(*) AS quantidade_funcionarios
+FROM funcionario
+GROUP BY setorfunc
+HAVING COUNT(*) > 3;
+
+
+
+
+
+
+
